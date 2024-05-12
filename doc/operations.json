@@ -1,0 +1,35 @@
+{
+  "hotel": {
+    "name": "Ho1",
+    "location": "Abay ave 88",
+    "star": 4,
+    "image": "https",
+    "num_of_floor": 3,
+    "num_of_rooms": 30
+  },
+
+  "booking": {
+  },
+
+  "room": {
+    "id": 1,
+    "room_type": "SINGLE",
+    "area": 66,
+    "base_price": 40000,
+    "hotel": {
+      "id": 2
+    }
+  },
+
+  "entertainment": {
+    "name": "Disco",
+    "additional_cost": 777
+  },
+
+  "guest": {
+    "first_name": "Gue1",
+    "last_name": "Las1",
+    "email": "aaa@gmail.com",
+    "phone": "+77077007070"
+  }
+}

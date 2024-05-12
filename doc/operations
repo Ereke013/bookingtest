@@ -1,0 +1,8 @@
+DROP TABLE room_service;
+DROP TABLE room_entertainment;
+DROP TABLE entertainment;
+DROP TABLE service;
+DROP TABLE booking;
+DROP TABLE guest;
+DROP TABLE room;
+DROP TABLE hotel;
