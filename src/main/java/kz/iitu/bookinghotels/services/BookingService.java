@@ -21,12 +21,12 @@ public class BookingService {
     @Autowired
     private GuestRepository guestRepository;
 
-    public Booking addBooking(Booking friend) {
-        return bookingRepository.save(friend);
+    public Booking addBooking(Booking booking) {
+        return bookingRepository.save(booking);
     }
 
-    public Booking saveBooking(Booking friend) {
-        return bookingRepository.save(friend);
+    public Booking saveBooking(Booking booking) {
+        return bookingRepository.save(booking);
     }
 
     public Booking getBookingById(Long id) {

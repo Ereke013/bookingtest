@@ -1,5 +1,6 @@
 {
   "hotel": {
+    "id": 1,
     "name": "Ho1",
     "location": "Abay ave 88",
     "star": 4,
@@ -9,6 +10,16 @@
   },
 
   "booking": {
+    "id": 1,
+    "check_in_date": "2024-07-10",
+    "check_out_date": "2024-07-16",
+    "total_costs": 1800,
+    "room": {
+      "id": 3
+    },
+    "guest": {
+      "id": 1
+    }
   },
 
   "room": {
@@ -22,14 +33,22 @@
   },
 
   "entertainment": {
+    "id": 1,
     "name": "Disco",
     "additional_cost": 777
   },
 
   "guest": {
+    "id": 1,
     "first_name": "Gue1",
     "last_name": "Las1",
     "email": "aaa@gmail.com",
     "phone": "+77077007070"
+  },
+  "room_service": {
+    "id": 1,
+    "service_name": "Breakfast",
+    "service_type": "Restoran",
+    "additional_cost": 7800
   }
 }

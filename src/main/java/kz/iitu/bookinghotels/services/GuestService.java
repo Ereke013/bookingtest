@@ -13,12 +13,12 @@ public class GuestService {
     @Autowired
     private GuestRepository guestRepository;
 
-    public Guest addGuest(Guest friend) {
-        return guestRepository.save(friend);
+    public Guest addGuest(Guest guest) {
+        return guestRepository.save(guest);
     }
 
-    public Guest updateGuest(Guest friend) {
-        return guestRepository.save(friend);
+    public Guest updateGuest(Guest guest) {
+        return guestRepository.save(guest);
     }
 
     public Guest getGuestById(Long id) {

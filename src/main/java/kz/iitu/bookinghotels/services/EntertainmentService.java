@@ -13,8 +13,8 @@ public class EntertainmentService {
     @Autowired
     private EntertainmentRepository entertainmentRepository;
 
-    public Entertainment saveEntertainment(Entertainment friend) {
-        return entertainmentRepository.save(friend);
+    public Entertainment saveEntertainment(Entertainment entertainment) {
+        return entertainmentRepository.save(entertainment);
     }
 
     public Entertainment getEntertainmentById(Long id) {

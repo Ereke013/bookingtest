@@ -13,8 +13,12 @@ public class ServicesService {
     @Autowired
     private ServiceRepository serviceRepository;
 
-    public Services addServices(Services friend) {
-        return serviceRepository.save(friend);
+    public Services addServices(Services service) {
+        return serviceRepository.save(service);
+    }
+
+    public Services updateServices(Services service) {
+        return serviceRepository.save(service);
     }
 
     public Services getServicesById(Long id) {

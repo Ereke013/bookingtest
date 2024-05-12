@@ -13,12 +13,12 @@ public class HotelService {
     @Autowired
     private HotelRepository hotelRepository;
 
-    public Hotel addHotel(Hotel friend) {
-        return hotelRepository.save(friend);
+    public Hotel addHotel(Hotel hotel) {
+        return hotelRepository.save(hotel);
     }
 
-    public Hotel updateHotel(Hotel friend) {
-        return hotelRepository.save(friend);
+    public Hotel updateHotel(Hotel hotel) {
+        return hotelRepository.save(hotel);
     }
 
 
