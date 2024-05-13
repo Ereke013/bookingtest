@@ -33,6 +33,10 @@ public class BookingService {
         return bookingRepository.findById(id).orElse(null);
     }
 
+    public List<Booking> getBookingByGuestId(Long guestId) {
+        return bookingRepository.findAllByGuest_Id(guestId);
+    }
+
     public void deleteBooking(Booking booking) {
         bookingRepository.delete(booking);
     }

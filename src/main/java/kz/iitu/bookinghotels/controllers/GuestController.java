@@ -2,6 +2,7 @@ package kz.iitu.bookinghotels.controllers;
 
 
 import kz.iitu.bookinghotels.entities.Guest;
+import kz.iitu.bookinghotels.models.GuestDto;
 import kz.iitu.bookinghotels.services.GuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class GuestController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> getGuestById(@PathVariable(name = "id") Long id) {
-        Guest guest = this.guestService.getGuestById(id);
+        GuestDto guest = this.guestService.getGuestById(id);
         if (guest != null) {
             return ResponseEntity.ok(guest);
         }
@@ -30,27 +31,17 @@ public class GuestController {
 
     @PutMapping(value = "/update/{id}")
     public ResponseEntity<?> updateGuest(@RequestBody Guest guest, @PathVariable(name = "id") Long id) {
-        Guest guestOld = this.guestService.getGuestById(id);
-        if (guestOld != null) {
-            guestOld.setFirst_name(guest.getFirst_name());
-            guestOld.setLast_name(guest.getLast_name());
-            guestOld.setEmail(guest.getEmail());
-            guestOld.setPhone(guest.getPhone());
-
-            this.guestService.updateGuest(guestOld);
+        GuestDto savedGuest = this.guestService.updateGuest(guest, id);
+        if (savedGuest == null) {
+            return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(guestOld);
+        return ResponseEntity.ok(savedGuest);
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<?> deleteGuestById(@PathVariable(name = "id") Long id) {
-        Guest guest = this.guestService.getGuestById(id);
-        if (guest != null) {
-            this.guestService.deleteGuest(guest);
-            return ResponseEntity.ok(guest);
-        }
-        return null;
+    public void deleteGuestById(@PathVariable(name = "id") Long id) {
+        this.guestService.deleteGuest(id);
     }
 
     @PostMapping(value = "/add")

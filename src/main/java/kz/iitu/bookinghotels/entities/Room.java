@@ -17,9 +17,6 @@ public class Room {
     @Column(name = "id")
     private Long id;
 
-//    @Column(name = "room_types")
-//    private RoomTypes room_types;
-
     @Column(name = "area")
     private Integer area;
 

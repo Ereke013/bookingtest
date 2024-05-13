@@ -43,7 +43,10 @@
     "first_name": "Gue1",
     "last_name": "Las1",
     "email": "aaa@gmail.com",
-    "phone": "+77077007070"
+    "phone": "+77077007070",
+    "login": "aaa",
+    "password": "111",
+    "role": "GUEST"
   },
   "room_service": {
     "id": 1,

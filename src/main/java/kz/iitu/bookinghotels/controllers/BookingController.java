@@ -28,6 +28,11 @@ public class BookingController {
         return null;
     }
 
+    @GetMapping(value = "/by-guest/{id}")
+    public ResponseEntity<?> getBookingByGuestId(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(this.bookingService.getBookingByGuestId(id));
+    }
+
     @PutMapping(value = "/update/{id}")
     public ResponseEntity<?> updateBooking(@RequestBody Booking booking, @PathVariable(name = "id") Long id) {
         Booking bookingOld = this.bookingService.getBookingById(id);
