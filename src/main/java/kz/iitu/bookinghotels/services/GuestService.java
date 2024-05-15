@@ -14,11 +14,8 @@ public class GuestService {
     @Autowired
     private GuestRepository guestRepository;
 
-    public GuestDto addGuest(Guest newGuest) {
-        Guest guest = guestRepository.save(newGuest);
-
-        return new GuestDto(guest.getId(), guest.getFirst_name(), guest.getLast_name(),
-                guest.getEmail(), guest.getPhone());
+    public Guest addGuest(Guest newGuest) {
+        return guestRepository.save(newGuest);
     }
 
     public GuestDto updateGuest(Guest guestToUpdate, Long id) {
@@ -40,6 +37,10 @@ public class GuestService {
 
     private Guest getGuestByIdInner(Long id) {
         return guestRepository.findById(id).orElse(null);
+    }
+
+    public Guest getGuestByEmail(String email) {
+        return guestRepository.findByEmail(email);
     }
 
     public GuestDto getGuestById(Long id) {

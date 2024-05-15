@@ -28,6 +28,11 @@ public class HotelController {
         return null;
     }
 
+    @GetMapping(value = "/images/{id}")
+    public ResponseEntity<?> getHotelImagesById(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(this.hotelService.getAllImagesByHotel(id));
+    }
+
     @PutMapping(value = "/update/{id}")
     public ResponseEntity<?> updateHotel(@RequestBody Hotel hotel, @PathVariable(name = "id") Long id) {
         Hotel hotel1 = this.hotelService.getHotelById(id);

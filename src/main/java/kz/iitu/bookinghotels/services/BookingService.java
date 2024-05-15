@@ -4,7 +4,6 @@ import kz.iitu.bookinghotels.entities.Booking;
 import kz.iitu.bookinghotels.entities.Guest;
 import kz.iitu.bookinghotels.models.GuestDto;
 import kz.iitu.bookinghotels.repositories.BookingRepository;
-import kz.iitu.bookinghotels.repositories.GuestRepository;
 import kz.iitu.bookinghotels.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,11 +23,13 @@ public class BookingService {
     private GuestService guestService;
 
     public Booking addBooking(Booking booking) {
-        GuestDto guestDto = guestService.getGuestById(booking.getGuest().getId());
-        if (guestDto == null) {
-            Guest guest = booking.getGuest();
-            guestService.addGuest(guest);
+        Guest guest = guestService.getGuestByEmail(booking.getGuest().getEmail());
+        if (guest == null) {
+            guest = booking.getGuest();
+            guest = guestService.addGuest(guest);
         }
+
+        booking.setGuest(guest);
 
         return bookingRepository.save(booking);
     }

@@ -29,7 +29,7 @@ public class BookingController {
         return null;
     }
 
-    @GetMapping(value = "/by-guest")
+    @PostMapping(value = "/by-guest")
     public ResponseEntity<?> getBookingByGuestId(@RequestBody BookingGuestDto bookingGuestDto) {
         return ResponseEntity.ok(this.bookingService.getBookingByGuest(bookingGuestDto.getEmail(), bookingGuestDto.getPhone()));
     }
@@ -63,8 +63,7 @@ public class BookingController {
     @PostMapping(value = "/add")
     public ResponseEntity<?> addBooking(@RequestBody Booking booking) {
         if (booking != null) {
-            this.bookingService.addBooking(booking);
-            return new ResponseEntity<>(booking, HttpStatus.OK);
+            return new ResponseEntity<>(this.bookingService.addBooking(booking), HttpStatus.OK);
         }
         return null;
     }
