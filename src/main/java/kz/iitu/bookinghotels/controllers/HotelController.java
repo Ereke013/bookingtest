@@ -36,6 +36,7 @@ public class HotelController {
             hotel1.setImage(hotel.getImage());
             hotel1.setStar(hotel.getStar());
             hotel1.setLocation(hotel.getLocation());
+            hotel1.setDescription(hotel.getDescription());
             hotel1.setNum_of_floor(hotel.getNum_of_floor());
             hotel1.setNum_of_rooms(hotel.getNum_of_rooms());
 
