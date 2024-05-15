@@ -33,4 +33,7 @@ public class Booking {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Guest guest;
+
+    @Column(name = "num_of_adults")
+    private Integer num_of_adults;
 }
