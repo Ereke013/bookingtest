@@ -18,7 +18,7 @@ public class GuestService {
         Guest guest = guestRepository.save(newGuest);
 
         return new GuestDto(guest.getId(), guest.getFirst_name(), guest.getLast_name(),
-                guest.getEmail(), guest.getPhone(), guest.getRole());
+                guest.getEmail(), guest.getPhone());
     }
 
     public GuestDto updateGuest(Guest guestToUpdate, Long id) {
@@ -35,7 +35,7 @@ public class GuestService {
         Guest guest = guestRepository.save(guestToUpdate);
 
         return new GuestDto(guest.getId(), guest.getFirst_name(), guest.getLast_name(),
-                guest.getEmail(), guest.getPhone(), guest.getRole());
+                guest.getEmail(), guest.getPhone());
     }
 
     private Guest getGuestByIdInner(Long id) {
@@ -50,7 +50,7 @@ public class GuestService {
         }
 
         return new GuestDto(guest.getId(), guest.getFirst_name(), guest.getLast_name(),
-                guest.getEmail(), guest.getPhone(), guest.getRole());
+                guest.getEmail(), guest.getPhone());
     }
 
     public void deleteGuest(Long id) {
@@ -65,6 +65,6 @@ public class GuestService {
                 .stream()
                 .map(guest ->
                         new GuestDto(guest.getId(), guest.getFirst_name(), guest.getLast_name(),
-                                guest.getEmail(), guest.getPhone(), guest.getRole())).toList();
+                                guest.getEmail(), guest.getPhone())).toList();
     }
 }

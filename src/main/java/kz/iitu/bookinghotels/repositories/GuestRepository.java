@@ -8,5 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public interface GuestRepository extends JpaRepository<Guest, Long> {
-    Guest findByLoginAndPassword(String login, String password);
+//    Guest findByLoginAndPassword(String login, String password);
 }

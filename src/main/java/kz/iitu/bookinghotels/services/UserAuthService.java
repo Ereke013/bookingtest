@@ -10,7 +10,7 @@ public class UserAuthService {
     @Autowired
     private GuestRepository guestRepository;
 
-    public Guest login(String login, String password) {
-        return this.guestRepository.findByLoginAndPassword(login, password);
-    }
+//    public Guest login(String login, String password) {
+//        return this.guestRepository.findByLoginAndPassword(login, password);
+//    }
 }

@@ -2,6 +2,7 @@ package kz.iitu.bookinghotels.controllers;
 
 
 import kz.iitu.bookinghotels.entities.Booking;
+import kz.iitu.bookinghotels.models.BookingGuestDto;
 import kz.iitu.bookinghotels.services.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,9 +29,9 @@ public class BookingController {
         return null;
     }
 
-    @GetMapping(value = "/by-guest/{id}")
-    public ResponseEntity<?> getBookingByGuestId(@PathVariable(name = "id") Long id) {
-        return ResponseEntity.ok(this.bookingService.getBookingByGuestId(id));
+    @GetMapping(value = "/by-guest")
+    public ResponseEntity<?> getBookingByGuestId(@RequestBody BookingGuestDto bookingGuestDto) {
+        return ResponseEntity.ok(this.bookingService.getBookingByGuest(bookingGuestDto.getEmail(), bookingGuestDto.getPhone()));
     }
 
     @PutMapping(value = "/update/{id}")

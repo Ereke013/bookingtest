@@ -1,7 +1,6 @@
 package kz.iitu.bookinghotels.entities;
 
 import jakarta.persistence.*;
-import kz.iitu.bookinghotels.models.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,14 +27,4 @@ public class Guest {
 
     @Column(name = "phone")
     private String phone;
-
-    @Column(name = "role")
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    @Column(name = "login", unique = true)
-    private String login;
-
-    @Column(name = "password")
-    private String password;
 }

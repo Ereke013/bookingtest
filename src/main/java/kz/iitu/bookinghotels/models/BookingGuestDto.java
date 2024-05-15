@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GuestDto {
-    private Long id;
-    private String first_name;
-    private String last_name;
+public class BookingGuestDto {
     private String email;
     private String phone;
 }
