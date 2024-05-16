@@ -1,7 +1,6 @@
 package kz.iitu.bookinghotels.services;
 
 import kz.iitu.bookinghotels.entities.Hotel;
-import kz.iitu.bookinghotels.repositories.HotelImageRepository;
 import kz.iitu.bookinghotels.repositories.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +12,6 @@ public class HotelService {
 
     @Autowired
     private HotelRepository hotelRepository;
-
-    @Autowired
-    private HotelImageRepository hotelImageRepository;
-
-    public List<String> getAllImagesByHotel(Long hotelId) {
-        return hotelImageRepository.hotelImages(hotelId);
-    }
 
     public Hotel addHotel(Hotel hotel) {
         return hotelRepository.save(hotel);
